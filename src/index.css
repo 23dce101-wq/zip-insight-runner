@@ -8,7 +8,7 @@
 
 @layer base {
   :root {
-    /* Premium Society Color Palette */
+    /* Enhanced Premium Society Color Palette */
     --background: 36 39% 97%;
     --foreground: 240 10% 15%;
     
@@ -18,24 +18,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 15%;
     
-    --primary: 240 10% 15%;
+    --primary: 240 10% 20%;
     --primary-foreground: 36 39% 97%;
     
-    --secondary: 36 30% 92%;
+    --secondary: 45 60% 85%;
     --secondary-foreground: 240 10% 15%;
     
-    --muted: 36 20% 94%;
-    --muted-foreground: 240 5% 45%;
+    --muted: 36 25% 90%;
+    --muted-foreground: 240 8% 40%;
     
-    --accent: 45 84% 88%;
+    --accent: 45 84% 75%;
     --accent-foreground: 240 10% 15%;
     
     --destructive: 0 65% 51%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 36 20% 88%;
-    --input: 36 20% 90%;
-    --ring: 45 84% 78%;
+    --border: 36 30% 85%;
+    --input: 36 30% 88%;
+    --ring: 45 84% 65%;
     
     --radius: 1rem;
     
