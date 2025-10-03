@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Building2, Menu, X, User, Settings, LogOut, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +15,11 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
+
+  if (location.pathname === "/auth") {
+    return null;
+  }
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -123,8 +129,8 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56 glass-card border-white/20">
                 <div className="px-3 py-2">
-                  <p className="text-sm font-medium text-charcoal">Pramukh Admin</p>
-                  <p className="text-xs text-muted-foreground">admin@society.com</p>
+                  <p className="text-sm font-medium text-charcoal">{user?.user_metadata?.full_name || "User"}</p>
+                  <p className="text-xs text-muted-foreground">{user?.email}</p>
                 </div>
                 <DropdownMenuSeparator className="bg-white/20" />
                 <DropdownMenuItem asChild>
@@ -140,7 +146,7 @@ const Header = () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-white/20" />
-                <DropdownMenuItem className="text-destructive focus:text-destructive">
+                <DropdownMenuItem className="text-destructive focus:text-destructive" onClick={signOut}>
                   <LogOut className="mr-2 h-4 w-4" />
                   Sign out
                 </DropdownMenuItem>

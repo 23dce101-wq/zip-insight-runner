@@ -77,7 +77,7 @@ const Home = () => {
                 From maintenance collection to member management, everything you need in one elegant solution.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/dashboard">
+                <Link to="/auth">
                   <Button className="btn-premium text-charcoal">
                     Get Started
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -163,7 +163,7 @@ const Home = () => {
               Join hundreds of societies already using our platform for seamless community management
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/dashboard">
+              <Link to="/auth">
                 <Button className="btn-glass">
                   Start Free Trial
                 </Button>
