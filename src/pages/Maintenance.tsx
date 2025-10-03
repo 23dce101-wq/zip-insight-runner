@@ -268,7 +268,8 @@ const Maintenance = () => {
       
       // For now, we'll use the existing mutation but show better messaging
       // In future, this could be enhanced to generate for specific month ranges
-      const added = await generateMonthlyMutation.mutateAsync(defaultMaintenanceAmount);
+      const result = await generateMonthlyMutation.mutateAsync(defaultMaintenanceAmount);
+      const added = result.count;
       
       if (added === 0) {
         toast({ 
