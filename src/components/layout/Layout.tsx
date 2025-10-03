@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen gradient-hero">
+    <div className="min-h-screen bg-gradient-hero transition-colors duration-300">
       <Header />
       <main className="relative">{children}</main>
     </div>

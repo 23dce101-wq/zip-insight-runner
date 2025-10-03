@@ -8,7 +8,8 @@ import {
   Shield, 
   BarChart3,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Receipt
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-society.jpg";
@@ -34,6 +35,11 @@ const Home = () => {
       icon: CreditCard,
       title: "Maintenance Collection",
       description: "Transparent payment tracking with automated reminders"
+    },
+    {
+      icon: Receipt,
+      title: "Expense Management",
+      description: "Track society expenses and maintain financial transparency"
     },
     {
       icon: BarChart3,
@@ -72,7 +78,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/dashboard">
-                  <Button className="btn-premium group">
+                  <Button className="btn-premium text-charcoal">
                     Get Started
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>

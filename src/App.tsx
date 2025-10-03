@@ -1,8 +1,8 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
@@ -10,13 +10,14 @@ import Houses from "./pages/Houses";
 import Members from "./pages/Members";
 import Vehicles from "./pages/Vehicles";
 import Maintenance from "./pages/Maintenance";
+import Expenditures from "./pages/Expenditures";
 import Reports from "./pages/Reports";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <ThemeProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -29,14 +30,17 @@ const App = () => (
             <Route path="/members" element={<Members />} />
             <Route path="/vehicles" element={<Vehicles />} />
             <Route path="/maintenance" element={<Maintenance />} />
+            <Route path="/expenditures" element={<Expenditures />} />
             <Route path="/reports" element={<Reports />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;
